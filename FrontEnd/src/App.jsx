@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import SobreCurso from "./components/SobreCurso";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
   return (
     <>
       <NavBar />
+
+      <SobreCurso />
     </>
   );
 }

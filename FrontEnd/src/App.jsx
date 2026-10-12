@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import SobreCurso from "./components/SobreCurso";
+import SobreCurso from "./components/Home/SobreCurso";
+import Inicio from "./components/Home/Inicio";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <NavBar />
-
+      <Inicio />
       <SobreCurso />
     </>
   );

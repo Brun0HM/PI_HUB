@@ -1,0 +1,31 @@
+@theme {
+  /* Brand */
+  --color-primary: #B51F32;
+  --color-primary-hover: #d02a40;
+  --color-primary-dark: #8a1726;
+  --color-primary-text: #e5596b;
+  --color-accent: #34b3a0;
+
+  /* Status */
+  --color-status-in-progress: #4c8dff;
+  --color-status-completed: #3fb950;
+  --color-status-locked: #e3a92b;
+  --color-status-archived: #6b7280;
+
+  /* Surfaces */
+  --color-bg: #0f1115;
+  --color-surface: #171a21;
+  --color-surface-raised: #20242d;
+  --color-border: #2b303b;
+
+  /* Text */
+  --color-text-primary: #e8eaed;
+  --color-text-secondary: #9aa1ae;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+  }
+}

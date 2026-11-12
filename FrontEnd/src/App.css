@@ -1,8 +1,5 @@
 @import "tailwindcss";
-
-@theme {
-  --color-pi-red: #b20000;
-}
+@import "./styles/theme.css";
 
 @keyframes notfound-card {
   from {
@@ -48,8 +45,4 @@
 
 @utility animate-notfound-glow {
   animation: notfound-glow 4s ease-in-out infinite;
-}
-
-body {
-  background-color: #121212;
 }

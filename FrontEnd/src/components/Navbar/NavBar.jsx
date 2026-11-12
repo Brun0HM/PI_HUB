@@ -1,6 +1,7 @@
 import { useState } from "react";
-import ButtonPrimary from "./Buttons/buttonPrimary";
-import ButtonOutline from "./Buttons/ButtonOutline";
+import ButtonPrimary from "../Buttons/buttonPrimary";
+import ButtonOutline from "../Buttons/ButtonOutline";
+import "./NavBar.css";
 
 function Navbar() {
   const [underline, setUnderline] = useState({
@@ -31,14 +32,14 @@ function Navbar() {
 
         <div>
           <ul
-            className="relative flex space-x-4 text-white"
+            className="relative flex space-x-4 text-text-primary"
             onMouseLeave={() =>
               setUnderline((current) => ({ ...current, visible: false }))
             }
           >
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-1 h-0.5 bg-pi-red transition-all duration-700 ease-in-out"
+              className="pointer-events-none absolute -bottom-1 h-0.5 bg-primary transition-all duration-700 ease-in-out"
               style={{
                 left: underline.left,
                 width: underline.width,
@@ -72,7 +73,7 @@ function Navbar() {
           </ul>
         </div>
 
-        <div className="flex flex-col space-y-1">
+        <div className="flex flex-col space-y-1  mt-2 mb-2">
           <ButtonPrimary text="Explorar P.Is" />
           <ButtonOutline text="Já sou aluno" />
         </div>

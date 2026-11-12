@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ButtonPrimary from "./Buttons/ButtonPrimary";
 
 function Navbar() {
   const [underline, setUnderline] = useState({
@@ -44,36 +45,34 @@ function Navbar() {
               }}
             />
             <li
-              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white"
+              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white text-base"
               onMouseEnter={moveUnderline}
             >
               Inicio
             </li>
             <li
-              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white"
+              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white text-base"
               onMouseEnter={moveUnderline}
             >
-              Sobre o curso
+              Sobre
             </li>
             <li
-              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white"
+              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white text-base"
               onMouseEnter={moveUnderline}
             >
-              Grades horárias
+              Materias
             </li>
             <li
-              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white"
+              className="cursor-pointer text-white/60 transition-colors duration-300 hover:text-white text-base"
               onMouseEnter={moveUnderline}
             >
-              PIs em destaque
+              Destaque
             </li>
           </ul>
         </div>
 
-        <div>
-          <button className="rounded bg-pi-red px-3 py-2 text-sm text-white hover:bg-red-700 transition-colors duration-300 ease-in-out">
-            Ver Projetos
-          </button>
+        <div className="flex flex-col space-y-1">
+          <ButtonPrimary text="Explorar P.Is" />
         </div>
       </div>
     </nav>

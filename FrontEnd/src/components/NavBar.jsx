@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ButtonPrimary from "./Buttons/ButtonPrimary";
+import ButtonPrimary from "./Buttons/buttonPrimary";
 
 function Navbar() {
   const [underline, setUnderline] = useState({

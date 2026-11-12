@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ButtonPrimary from "./Buttons/buttonPrimary";
+import ButtonOutline from "./Buttons/ButtonOutline";
 
 function Navbar() {
   const [underline, setUnderline] = useState({
@@ -73,6 +74,7 @@ function Navbar() {
 
         <div className="flex flex-col space-y-1">
           <ButtonPrimary text="Explorar P.Is" />
+          <ButtonOutline text="Já sou aluno" />
         </div>
       </div>
     </nav>

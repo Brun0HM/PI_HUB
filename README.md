@@ -310,7 +310,7 @@ _Em desenvolvimento_
 ```
 /
 ├── frontend/   # aplicação React (Vite)
-├── docs/       # PDFs das entregas concluídas
+├── docs/       # Documentação completa em PDF
 └── README.md
 ```
 

@@ -249,7 +249,7 @@ function GradeHorarios() {
           </div>
 
           {tabela.temOverflow && (
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex w-24 items-center justify-end bg-linear-to-l from-[#0f1115] via-[#0f1115]/70 to-transparent pr-1">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex w-24 items-center justify-end bg-linear-to-l from-bg via-bg/70 to-transparent pr-1">
               <BotaoAvancar
                 noFim={tabela.noFim}
                 onClick={tabela.avancar}

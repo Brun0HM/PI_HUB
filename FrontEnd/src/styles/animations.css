@@ -32,6 +32,17 @@
   }
 }
 
+@keyframes nav-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @utility animate-notfound-card {
   animation: notfound-card 700ms ease-out both;
 }
@@ -42,4 +53,8 @@
 
 @utility animate-notfound-glow {
   animation: notfound-glow 4s ease-in-out infinite;
+}
+
+@utility animate-nav-drop {
+  animation: nav-drop 220ms ease-out both;
 }

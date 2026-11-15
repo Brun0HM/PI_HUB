@@ -2,14 +2,14 @@ function SobreCurso() {
   return (
     <section
       id="sobre-curso"
-      className="bg-[#121212] px-6 py-24 text-white sm:py-32"
+      className="scroll-mt-16 bg-[#121212] px-6 py-16 text-white sm:py-24 lg:scroll-mt-[150px] lg:py-32"
     >
       <div className="container mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pi-red">
+          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             Conheça o curso
           </span>
-          <h1 className=" text-4xl font-bold leading-tight sm:text-6xl">
+          <h1 className="text-4xl font-bold leading-tight sm:text-6xl">
             Sobre o curso
           </h1>
         </div>
@@ -27,15 +27,15 @@ function SobreCurso() {
           </p>
 
           <div className="grid gap-4 pt-2 sm:grid-cols-3">
-            <div className="border-l-2 border-pi-red pl-4">
+            <div className="border-l-2 border-primary pl-4">
               <strong className="block text-2xl text-white">3 anos</strong>
               <span className="text-sm">de formação</span>
             </div>
-            <div className="border-l-2 border-pi-red pl-4">
+            <div className="border-l-2 border-primary pl-4">
               <strong className="block text-2xl text-white">Prático</strong>
               <span className="text-sm">aprendizado por projetos</span>
             </div>
-            <div className="border-l-2 border-pi-red pl-4">
+            <div className="border-l-2 border-primary pl-4">
               <strong className="block text-2xl text-white">
                 Multiplataforma
               </strong>

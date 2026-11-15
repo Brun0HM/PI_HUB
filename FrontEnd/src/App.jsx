@@ -1,21 +1,7 @@
-import "./App.css";
-import NavBar from "./components/Navbar/NavBar";
-import SobreCurso from "./components/Home/SobreCurso";
-import Inicio from "./components/Home/Inicio";
-import NotFound from "./pages/NotFound";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-  if (window.location.pathname !== "/") {
-    return <NotFound />;
-  }
-
-  return (
-    <>
-      <NavBar />
-      <Inicio />
-      <SobreCurso />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;

@@ -1,8 +1,11 @@
-function ButtonPrimary(props) {
+function ButtonPrimary({ text, className = "", ...props }) {
   return (
-    //
-    <button className="rounded-lg  px-3 py-1.5 text-text-primary bg-primary hover:bg-primary-hover active:bg-primary-dark font-medium text-medium transition-colors duration-300 ease-in-out">
-      {props.text}
+    <button
+      type="button"
+      className={`inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-text-primary transition-colors duration-300 ease-in-out hover:bg-primary-hover active:bg-primary-dark ${className}`}
+      {...props}
+    >
+      {text}
     </button>
   );
 }

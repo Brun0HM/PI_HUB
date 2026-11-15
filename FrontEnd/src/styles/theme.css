@@ -1,4 +1,8 @@
 @theme {
+  /* Tipografia */
+  --font-sans: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
+
   /* Brand */
   --color-primary: #B51F32;
   --color-primary-hover: #d02a40;

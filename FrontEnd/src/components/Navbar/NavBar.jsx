@@ -91,8 +91,8 @@ function Navbar() {
           </ul>
 
           <div className="hidden flex-col items-end gap-2 lg:flex">
-            <ButtonPrimary text="Explorar P.Is" />
-            <ButtonOutline text="Já sou aluno" />
+            <ButtonPrimary text="Explorar P.Is" to="/login" />
+            <ButtonOutline text="Já sou aluno" to="/login" />
           </div>
 
           <button
@@ -134,11 +134,13 @@ function Navbar() {
               <ButtonPrimary
                 text="Explorar P.Is"
                 className="w-full"
+                to="/login"
                 onClick={closeMenu}
               />
               <ButtonOutline
                 text="Já sou aluno"
                 className="w-full"
+                to="/login"
                 onClick={closeMenu}
               />
             </div>

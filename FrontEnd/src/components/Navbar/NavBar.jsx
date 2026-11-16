@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import ButtonOutline from "../Buttons/ButtonOutline";
 import logo from "../../assets/logo_dsm_fatec_jahu_claro.svg";
+import { useAutenticacao } from "../../hooks/useAutenticacao";
+import { sair } from "../../services/auth";
 
 const navItems = [
   { label: "Inicio", href: "/#inicio" },
@@ -11,7 +14,29 @@ const navItems = [
   { label: "Destaque", href: "/#destaque" },
 ];
 
+const CARGO = "Coordenador";
+
+function InfoUsuario({ email, onSair, className = "" }) {
+  return (
+    <div className={`min-w-0 text-right ${className}`}>
+      <p className="truncate text-sm text-text-primary" title={email}>
+        {email}
+      </p>
+      <p className="text-xs text-text-secondary">{CARGO}</p>
+      <button
+        type="button"
+        onClick={onSair}
+        className="mt-1 text-xs text-primary-text transition-colors hover:text-primary"
+      >
+        Sair
+      </button>
+    </div>
+  );
+}
+
 function Navbar() {
+  const navigate = useNavigate();
+  const { autenticado, email } = useAutenticacao();
   const [menuOpen, setMenuOpen] = useState(false);
   const [underline, setUnderline] = useState({
     left: 0,
@@ -41,6 +66,12 @@ function Navbar() {
   };
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleSair = () => {
+    sair();
+    closeMenu();
+    navigate("/");
+  };
 
   return (
     <>
@@ -90,10 +121,28 @@ function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden flex-col items-end gap-2 lg:flex">
-            <ButtonPrimary text="Explorar P.Is" to="/login" />
-            <ButtonOutline text="Já sou aluno" to="/login" />
-          </div>
+          {autenticado ? (
+            <div className="hidden min-w-0 flex-col items-end text-right lg:flex">
+              <span
+                className="max-w-[320px] truncate text-sm text-text-primary"
+                title={email}
+              >
+                {email}
+              </span>
+              <span className="text-xs text-text-secondary">Coordenador</span>
+              <span
+                className="text-xs cursor-pointer hover:text-primary-text transition-colors"
+                onClick={handleSair}
+              >
+                Sair
+              </span>
+            </div>
+          ) : (
+            <div className="hidden flex-col items-end gap-2 lg:flex">
+              <ButtonPrimary text="Explorar P.Is" to="/login" />
+              <ButtonOutline text="Já sou aluno" to="/login" />
+            </div>
+          )}
 
           <button
             type="button"
@@ -130,20 +179,30 @@ function Navbar() {
               ))}
             </ul>
 
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              <ButtonPrimary
-                text="Explorar P.Is"
-                className="w-full"
-                to="/login"
-                onClick={closeMenu}
-              />
-              <ButtonOutline
-                text="Já sou aluno"
-                className="w-full"
-                to="/login"
-                onClick={closeMenu}
-              />
-            </div>
+            {autenticado ? (
+              <div className="mt-4 border-t border-white/5 pt-4 text-right">
+                <p className="truncate text-sm text-text-primary">{email}</p>
+                <p className="text-xs text-text-secondary">Coordenador</p>
+                <p className="text-xs text-text-secondary" onClick={handleSair}>
+                  Sair
+                </p>
+              </div>
+            ) : (
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <ButtonPrimary
+                  text="Explorar P.Is"
+                  className="w-full"
+                  to="/explorar"
+                  onClick={closeMenu}
+                />
+                <ButtonOutline
+                  text="Já sou aluno"
+                  className="w-full"
+                  to="/login"
+                  onClick={closeMenu}
+                />
+              </div>
+            )}
           </div>
         )}
       </nav>

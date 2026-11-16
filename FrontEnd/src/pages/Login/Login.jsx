@@ -2,7 +2,9 @@ import ButtonPrimary from "../../components/Buttons/ButtonPrimary";
 import FundoLogin from "../../components/Login/FundoLogin";
 import logoClaro from "../../assets/logo_dsm_fatec_jahu_claro.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { validateField, validateLogin } from "../../services/Validate";
+import { entrar } from "../../services/auth";
 
 const inputClasses =
   "h-14 w-full rounded-md border border-border bg-surface px-4 text-sm text-text-primary transition-colors placeholder:text-text-secondary focus:border-primary focus:outline-none lg:h-auto lg:rounded-none lg:border-x-0 lg:border-t-0 lg:border-b-text-secondary/50 lg:bg-transparent lg:px-1 lg:py-3 lg:focus:border-text-primary";
@@ -10,6 +12,7 @@ const inputClasses =
 const formInicial = { email: "", ra: "", senha: "" };
 
 function Login() {
+  const navigate = useNavigate();
   const [form, setForm] = useState(formInicial);
   const [errors, setErrors] = useState({});
 
@@ -25,15 +28,18 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const errors = validateLogin(form);
-    setErrors(errors);
+    const erros = validateLogin(form);
+    setErrors(erros);
 
-    if (Object.keys(errors).length > 0) {
+    if (Object.keys(erros).length > 0) {
       event.currentTarget
-        .querySelector(`[name="${Object.keys(errors)[0]}"]`)
+        .querySelector(`[name="${Object.keys(erros)[0]}"]`)
         ?.focus();
       return;
     }
+
+    entrar(form.email);
+    navigate("/dashboard");
   };
 
   const handleEmailBlur = () => {

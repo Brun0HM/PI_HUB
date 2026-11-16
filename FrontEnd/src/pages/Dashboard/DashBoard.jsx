@@ -1,62 +1,53 @@
+import { useRef } from "react";
+import BotaoAvancar from "../../components/Buttons/BotaoAvancar";
 import StatusBar from "../../components/Dashboard/StatusBar";
+import TurmaCard from "../../components/Dashboard/TurmaCard";
+import {
+  entregasProximas,
+  resumoStatus,
+  totalPIs,
+  turmasResumo,
+} from "../../data/pihub";
+import { useSetasDeRolagem } from "../../hooks/useSetasDeRolagem";
+import { formatarData } from "../../utils/formatarData";
 
-const statuses = [
-  { label: "Concluídos", value: 42, color: "var(--color-status-completed)" },
-  { label: "Andamento", value: 28, color: "var(--color-status-in-progress)" },
-  { label: "Cancelados", value: 18, color: "var(--color-status-archived)" },
-  { label: "Trancados", value: 12, color: "var(--color-status-locked)" },
-];
+const inputClasses =
+  "h-10 w-full rounded-xl border border-border bg-surface pl-4 pr-12 text-sm text-text-primary transition-colors placeholder:text-text-secondary  focus:outline-none focus:bg-surface-raised";
 
-const entregas = [
-  {
-    id: 6,
-    tipo: "planejamento de design",
-    semestre: 2,
-    date: "2026-02-10",
-  },
-  {
-    id: 4,
-    tipo: "planejamento do banco",
-    semestre: 5,
-    date: "2026-02-10",
-  },
-  {
-    id: 8,
-    tipo: "protótipo no figma",
-    semestre: 1,
-    date: "2024-02-10",
-  },
-  {
-    id: 2,
-    tipo: "documentação técnica",
-    semestre: 3,
-    date: "2024-02-17",
-  },
-  {
-    id: 5,
-    tipo: "front-end funcional",
-    semestre: 4,
-    date: "2024-02-24",
-  },
-];
-
-const totalPIs = statuses.reduce((soma, status) => soma + status.value, 0);
-
-function formatarData(data) {
-  return new Date(`${data}T00:00:00`).toLocaleDateString("pt-BR");
+function SearchIcon({ className }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+      />
+    </svg>
+  );
 }
 
 function DashBoard() {
+  const turmasRef = useRef(null);
+  const carrossel = useSetasDeRolagem(turmasRef, "[data-turma]");
+
   return (
-    <div className="flex flex-col items-center px-4 py-10">
-      <div className="grid w-full max-w-5xl items-stretch gap-6 lg:grid-cols-2">
+    <div className="flex flex-col items-center px-4 py-10 sm:px-6 lg:px-20">
+      <div className="grid w-full items-stretch gap-6 lg:grid-cols-2">
         <div className="flex flex-col gap-6 rounded-2xl border border-border bg-surface p-8">
           <h1 className="text-2xl font-semibold text-text-primary">
             Status dos P.Is
           </h1>
 
           <div className="flex flex-col gap-5">
-            {statuses.map((status) => (
+            {resumoStatus.map((status) => (
               <StatusBar key={status.label} total={totalPIs} {...status} />
             ))}
           </div>
@@ -109,12 +100,12 @@ function DashBoard() {
           </div>
 
           <div className="flex min-w-0 flex-1 flex-col gap-4 rounded-2xl border border-border bg-surface p-5">
-            <h2 className="text-1xl font-semibold text-text-primary mb-2 ">
+            <h2 className="mb-2 text-xl font-semibold text-text-primary">
               O prazo de entrega está próximo
             </h2>
 
             <ul className="flex flex-col divide-y divide-border">
-              {entregas.map((entrega) => (
+              {entregasProximas.map((entrega) => (
                 <li
                   key={entrega.id}
                   className="flex min-w-0 items-center gap-2 py-3 first:pt-0 last:pb-0"
@@ -135,18 +126,88 @@ function DashBoard() {
                   </svg>
 
                   <span className="min-w-0 flex-1 truncate text-xs text-text-primary">
-                    Entrega {entrega.id} - {entrega.tipo} - semestre{" "}
-                    {entrega.semestre}
+                    Entrega {entrega.numero} - {entrega.tipo} -{" "}
+                    {entrega.semestre}º semestre
                   </span>
 
                   <span className="shrink-0 text-[11px] text-text-secondary">
-                    {formatarData(entrega.date)}
+                    {formatarData(entrega.data)}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
+        <div className="flex min-w-0 flex-col gap-4 sm:flex-row lg:col-span-2">
+          <div className="relative min-w-0 flex-1">
+            <SearchIcon className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-text-secondary" />
+            <input
+              type="text"
+              placeholder="Buscar Turmas"
+              aria-label="Buscar turmas"
+              className={inputClasses}
+            />
+          </div>
+
+          <div className="relative min-w-0 flex-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-text-secondary"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder="Explorar Turmas"
+              aria-label="Explorar turmas"
+              className={inputClasses}
+            />
+          </div>
+        </div>
+
+        <section className="flex min-w-0 flex-col gap-4 lg:col-span-2">
+          <div className="relative">
+            <div
+              ref={turmasRef}
+              className="scrollbar-hidden flex gap-4 overflow-x-auto pb-1"
+            >
+              {turmasResumo.map((turma) => (
+                <div
+                  key={turma.id}
+                  data-turma
+                  className="w-[calc(50%-0.5rem)] shrink-0 lg:w-[calc(25%-0.75rem)]"
+                >
+                  <TurmaCard cor="var(--color-status-completed)" {...turma} />
+                </div>
+              ))}
+            </div>
+
+            {carrossel.temOverflow && (
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex w-16 items-center justify-end bg-linear-to-l from-bg/80 to-transparent pr-1">
+                <BotaoAvancar
+                  noFim={carrossel.noFim}
+                  onClick={carrossel.avancar}
+                  className="pointer-events-auto border border-border bg-surface/90 backdrop-blur"
+                />
+              </div>
+            )}
+          </div>
+
+          {carrossel.temOverflow && (
+            <p className="text-center text-xs text-text-secondary">
+              Use a seta para ver as outras turmas
+            </p>
+          )}
+        </section>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ function Hero() {
       id="inicio"
       className="scroll-mt-16 px-6 py-16 text-white sm:px-10 sm:py-24 lg:scroll-mt-37.5 lg:px-20 lg:py-32"
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 sm:gap-12 xl:flex-row xl:items-center">
+      <div className="flex w-full flex-col gap-10 sm:gap-12 xl:flex-row xl:items-center">
         <div>
           <h1 className="text-[clamp(2rem,10vw,3rem)] leading-tight font-bold sm:text-5xl lg:text-7xl">
             <span className="text-primary sm:whitespace-nowrap">

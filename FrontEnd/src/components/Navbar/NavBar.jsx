@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 z-50 w-full bg-surface backdrop-blur-md">
-        <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4 lg:h-37.5">
+        <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6 lg:h-37.5 lg:px-20">
           <a
             href="/#inicio"
             aria-label="P.I Hub — início"

@@ -55,7 +55,7 @@ function SobreCurso() {
       className="scroll-mt-16 px-6 py-16 text-text-primary sm:px-10 sm:py-24 lg:scroll-mt-37.5 lg:px-20 lg:py-32"
     >
       <h2 className="sr-only">Sobre o curso</h2>
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:grid-cols-2">
+      <div className="grid w-full items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:grid-cols-2">
         <div>
           <div className="relative aspect-2/1 overflow-hidden rounded-xl">
             {imagens.map((imagem, indice) => (

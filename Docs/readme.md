@@ -4,3 +4,7 @@
 Fatec Jahu · Curso de Desenvolvimento de Software Multiplataforma · Equipe04
 
 > Nesta pasta, temos o arquivo em PDF com toda a documentação do P.I Hub. Nele, você encontrará as informações de forma mais completa e detalhada para facilitar o acompanhamento e a consulta sempre que necessário.
+
+## Documentação técnica
+
+- [DOCUMENTACAO-TECNICA.md](./DOCUMENTACAO-TECNICA.md) — arquitetura, estrutura de pastas, decisões técnicas, fluxos, autenticação simulada e próximos passos.

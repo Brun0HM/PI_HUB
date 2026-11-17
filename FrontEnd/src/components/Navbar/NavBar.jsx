@@ -122,24 +122,14 @@ function Navbar() {
           </ul>
 
           {autenticado ? (
-            <div className="hidden min-w-0 flex-col items-end text-right lg:flex">
-              <span
-                className="max-w-[320px] truncate text-sm text-text-primary"
-                title={email}
-              >
-                {email}
-              </span>
-              <span className="text-xs text-text-secondary">Coordenador</span>
-              <span
-                className="text-xs cursor-pointer hover:text-primary-text transition-colors"
-                onClick={handleSair}
-              >
-                Sair
-              </span>
-            </div>
+            <InfoUsuario
+              email={email}
+              onSair={handleSair}
+              className="hidden lg:block"
+            />
           ) : (
             <div className="hidden flex-col items-end gap-2 lg:flex">
-              <ButtonPrimary text="Explorar P.Is" to="/login" />
+              <ButtonPrimary text="Explorar P.Is" to="/projetos" />
               <ButtonOutline text="Já sou aluno" to="/login" />
             </div>
           )}
@@ -180,19 +170,17 @@ function Navbar() {
             </ul>
 
             {autenticado ? (
-              <div className="mt-4 border-t border-white/5 pt-4 text-right">
-                <p className="truncate text-sm text-text-primary">{email}</p>
-                <p className="text-xs text-text-secondary">Coordenador</p>
-                <p className="text-xs text-text-secondary" onClick={handleSair}>
-                  Sair
-                </p>
-              </div>
+              <InfoUsuario
+                email={email}
+                onSair={handleSair}
+                className="mt-4 border-t border-white/5 pt-4"
+              />
             ) : (
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <ButtonPrimary
                   text="Explorar P.Is"
                   className="w-full"
-                  to="/explorar"
+                   to="/projetos"
                   onClick={closeMenu}
                 />
                 <ButtonOutline

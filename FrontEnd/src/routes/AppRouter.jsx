@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login/Login";
 import DashBoard from "../pages/Dashboard/DashBoard";
+import ExplorarProjeto from "../pages/Projetos/ExplorarProjeto";
 
 function AppRouter() {
   return (
@@ -13,6 +14,7 @@ function AppRouter() {
         <Route path="*" element={<NotFound />} />
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/explorarprojetos" element={<ExplorarProjeto />} />
           <Route path="/" element={<Home />} />
         </Route>
       </Routes>

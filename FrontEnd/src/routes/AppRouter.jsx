@@ -5,6 +5,7 @@ import NotFound from "../pages/NotFound";
 import Login from "../pages/Login/Login";
 import DashBoard from "../pages/Dashboard/DashBoard";
 import ExplorarProjeto from "../pages/Projetos/ExplorarProjeto";
+import Detalhes from "../pages/Projetos/Detalhes";
 
 function AppRouter() {
   return (
@@ -16,6 +17,7 @@ function AppRouter() {
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/explorarprojetos" element={<ExplorarProjeto />} />
           <Route path="/" element={<Home />} />
+          <Route path="/detalhes" element={<Detalhes />} />
         </Route>
       </Routes>
     </BrowserRouter>

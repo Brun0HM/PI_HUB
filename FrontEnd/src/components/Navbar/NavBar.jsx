@@ -129,7 +129,7 @@ function Navbar() {
             />
           ) : (
             <div className="hidden flex-col items-end gap-2 lg:flex">
-              <ButtonPrimary text="Explorar P.Is" to="/projetos" />
+              <ButtonPrimary text="Explorar P.Is" to="/explorarprojetos" />
               <ButtonOutline text="Já sou aluno" to="/login" />
             </div>
           )}
@@ -180,7 +180,7 @@ function Navbar() {
                 <ButtonPrimary
                   text="Explorar P.Is"
                   className="w-full"
-                   to="/projetos"
+                  to="/explorarprojetos"
                   onClick={closeMenu}
                 />
                 <ButtonOutline

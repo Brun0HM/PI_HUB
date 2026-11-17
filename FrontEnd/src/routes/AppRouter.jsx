@@ -17,7 +17,7 @@ function AppRouter() {
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/explorarprojetos" element={<ExplorarProjeto />} />
           <Route path="/" element={<Home />} />
-          <Route path="/detalhes" element={<Detalhes />} />
+          <Route path="/projetos/:id" element={<Detalhes />} />
         </Route>
       </Routes>
     </BrowserRouter>

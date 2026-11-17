@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Card from "../../components/Explorar/Card";
 import BotaoAvancar from "../../components/Buttons/BotaoAvancar";
 import { useSetasDeRolagem } from "../../hooks/useSetasDeRolagem";
+import { detalhesDoProjeto, projetos } from "../../data/pihub";
 
 const secao = "px-6 py-16 sm:px-10 lg:px-20";
 
@@ -118,33 +119,25 @@ function ExplorarProjeto() {
             ref={projetosRef}
             className="scrollbar-hidden flex gap-4 overflow-x-auto py-4 pr-6 pl-6 sm:pr-10 sm:pl-10 lg:pr-20 lg:pl-20"
           >
-            <div data-projeto className="w-full shrink-0 lg:w-auto">
-              <Card
-                title="Projeto 1"
-                year="2026/1"
-                tag="Tecnologia"
-                imageUrl="https://via.placeholder.com/581x260"
-                to="#"
-              />
-            </div>
-            <div data-projeto className="w-full shrink-0 lg:w-auto">
-              <Card
-                title="Projeto 2"
-                year="2026/1"
-                tag="Tecnologia"
-                imageUrl="https://via.placeholder.com/581x260"
-                to="#"
-              />
-            </div>
-            <div data-projeto className="w-full shrink-0 lg:w-auto">
-              <Card
-                title="Projeto 3"
-                year="2026/1"
-                tag="Saúde"
-                imageUrl="https://via.placeholder.com/581x260"
-                to="#"
-              />
-            </div>
+            {projetos.slice(0, 3).map((projeto) => {
+              const detalhe = detalhesDoProjeto(projeto.id);
+
+              return (
+                <div
+                  key={projeto.id}
+                  data-projeto
+                  className="w-full shrink-0 lg:w-auto"
+                >
+                  <Card
+                    title={projeto.titulo}
+                    year={detalhe.periodoLetivo}
+                    tag={detalhe.tags[0]}
+                    imageUrl="https://via.placeholder.com/581x260"
+                    to={`/projetos/${projeto.id}`}
+                  />
+                </div>
+              );
+            })}
           </div>
 
           {carrossel.temOverflow && (

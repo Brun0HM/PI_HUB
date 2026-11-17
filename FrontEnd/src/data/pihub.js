@@ -412,3 +412,113 @@ export const entregasProximas = projetos
   })
   .sort((a, b) => a.data.localeCompare(b.data))
   .slice(0, 5);
+
+/* -------------------------------------------------------------------------- */
+/* Detalhes do projeto (dados derivados, usados na página de detalhes)        */
+/* -------------------------------------------------------------------------- */
+
+const PROFESSORES = [
+  "Cida Zen",
+  "Marcos Aurélio",
+  "Fernanda Lima",
+  "Rogério Alves",
+  "Patrícia Souza",
+  "Eduardo Tanaka",
+];
+
+const NOMES_INTEGRANTES = [
+  "Ana Beatriz Souza",
+  "Bruno Carvalho",
+  "Camila Rodrigues",
+  "Daniel Ferreira",
+  "Eduarda Santos",
+  "Felipe Almeida",
+  "Gabriela Martins",
+  "Henrique Oliveira",
+  "Isabela Costa",
+  "João Pedro Lima",
+  "Larissa Nunes",
+  "Lucas Pereira",
+  "Mariana Ribeiro",
+  "Matheus Barbosa",
+  "Natália Gomes",
+  "Otávio Mendes",
+  "Paula Freitas",
+  "Rafael Cardoso",
+  "Sofia Duarte",
+  "Thiago Moreira",
+  "Vinícius Rocha",
+  "Yasmin Prado",
+  "Beatriz Faria",
+  "Caio Teixeira",
+];
+
+const areaPorSemestre = {
+  1: {
+    tema: "desenvolvimento web",
+    tags: ["Web", "Front-end", "React"],
+  },
+  2: {
+    tema: "aplicações web",
+    tags: ["Web", "Back-end", "APIs"],
+  },
+  3: {
+    tema: "aplicações mobile",
+    tags: ["Mobile", "UX", "Design"],
+  },
+  4: {
+    tema: "gestão de dados",
+    tags: ["Dados", "Banco de Dados", "SQL"],
+  },
+  5: {
+    tema: "sistemas corporativos",
+    tags: ["Sistemas", "Arquitetura", "Cloud"],
+  },
+  6: {
+    tema: "inovação e impacto social",
+    tags: ["Inovação", "Impacto Social", "Pesquisa"],
+  },
+};
+
+/** Linha do tempo padrão de um P.I, com datas do período letivo atual. */
+const LINHA_DO_TEMPO_PADRAO = [
+  { titulo: "Reunião de kickoff", data: "2026-08-12", lado: "dir" },
+  { titulo: "Entrega do design", data: "2026-09-10", lado: "esq" },
+  { titulo: "Entrega da documentação", data: "2026-10-18", lado: "dir" },
+  { titulo: "Apresentação final", data: "2026-11-27", lado: "esq" },
+];
+
+/**
+ * Retorna o projeto com os campos extras exibidos na página de detalhes.
+ * Retorna null quando o id não existe (a página mostra o estado vazio).
+ */
+export function detalhesDoProjeto(id) {
+  const projeto = projetos.find((item) => item.id === id);
+  if (!projeto) return null;
+
+  const turma = turmas.find((item) => item.id === projeto.turmaId);
+  const area = areaPorSemestre[turma.semestre];
+  const numero = Number(projeto.id.split("-")[1]);
+
+  const inicioNomes = (numero * 3) % (NOMES_INTEGRANTES.length - 6);
+  const membros = Array.from(
+    { length: projeto.integrantes },
+    (_, indice) =>
+      NOMES_INTEGRANTES[
+        (inicioNomes + indice) % NOMES_INTEGRANTES.length
+      ],
+  );
+
+  return {
+    ...projeto,
+    semestre: turma.semestre,
+    periodoLetivo: turma.periodoLetivo,
+    professor: PROFESSORES[numero % PROFESSORES.length],
+    tema: area.tema,
+    tags: area.tags,
+    descricao: `${projeto.titulo} é um projeto integrador do ${turma.semestre}º semestre, desenvolvido pelo ${projeto.grupo} com foco em ${area.tema}. A proposta reúne pesquisa, prototipação e implementação de uma solução para um problema real do campus.`,
+    repositorio: `https://github.com/pihub-fatec/${projeto.id}`,
+    integrantesNomes: membros,
+    linhaDoTempo: LINHA_DO_TEMPO_PADRAO,
+  };
+}

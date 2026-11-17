@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none" role="img" aria-label="Ilustração de desenvolvimento web">
+  <defs>
+    <linearGradient id="web-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171A21"/>
+      <stop offset="1" stop-color="#10131A"/>
+    </linearGradient>
+    <pattern id="web-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#2B303B" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#web-bg)"/>
+  <rect width="1200" height="675" fill="url(#web-grid)" opacity=".45"/>
+  <circle cx="600" cy="330" r="330" fill="#34B3A0" opacity=".06"/>
+  <circle cx="600" cy="330" r="220" fill="#4C8DFF" opacity=".06"/>
+  <rect x="380" y="180" width="440" height="320" rx="18" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M380 232H820" stroke="#2B303B" stroke-width="2"/>
+  <circle cx="406" cy="206" r="6" fill="#B51F32"/>
+  <circle cx="426" cy="206" r="6" fill="#E3A92B"/>
+  <circle cx="446" cy="206" r="6" fill="#34B3A0"/>
+  <path d="M478 300l-46 40 46 40" stroke="#34B3A0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M722 300l46 40-46 40" stroke="#34B3A0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M628 284l-56 112" stroke="#4C8DFF" stroke-width="10" stroke-linecap="round"/>
+  <rect x="248" y="248" width="92" height="72" rx="12" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M268 274h52M268 296h34" stroke="#9AA1AE" stroke-width="6" stroke-linecap="round"/>
+  <rect x="860" y="348" width="96" height="74" rx="12" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M878 376h60M878 398h38" stroke="#9AA1AE" stroke-width="6" stroke-linecap="round"/>
+  <path d="M340 372h-36M900 332h36" stroke="#2B303B" stroke-width="2"/>
+  <circle cx="300" cy="372" r="5" fill="#34B3A0"/>
+  <circle cx="940" cy="332" r="5" fill="#4C8DFF"/>
+</svg>

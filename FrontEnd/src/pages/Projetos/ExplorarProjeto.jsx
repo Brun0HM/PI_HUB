@@ -132,7 +132,7 @@ function ExplorarProjeto() {
                     title={projeto.titulo}
                     year={detalhe.periodoLetivo}
                     tag={detalhe.tags[0]}
-                    imageUrl="https://via.placeholder.com/581x260"
+                    imageUrl={detalhe.imagem}
                     to={`/projetos/${projeto.id}`}
                   />
                 </div>

@@ -1,22 +1,21 @@
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { detalhesDoProjeto, statusMeta } from "../../data/pihub";
 import { formatarData } from "../../utils/formatarData";
 
-function IconeImagem({ className }) {
+function IconeVoltar({ className }) {
   return (
     <svg
       className={className}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <circle cx="8.5" cy="9.5" r="1.5" />
-      <path d="m4 17 5-5 4 4 3-3 4 4" />
+      <path d="M19 12H5" />
+      <path d="m11 18-6-6 6-6" />
     </svg>
   );
 }
@@ -104,7 +103,16 @@ function Evento({ evento }) {
 
 function Detalhes() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const projeto = detalhesDoProjeto(id);
+
+  function voltar() {
+    if (window.history.state?.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/explorarprojetos");
+    }
+  }
 
   if (!projeto) {
     return (
@@ -127,25 +135,35 @@ function Detalhes() {
 
   return (
     <div className="pb-24">
-      <div className="border-b border-border py-6">
-        <div className="flex flex-wrap justify-end gap-3 px-6 text-base sm:px-10 lg:px-20">
-          <Link
-            to="/explorarprojetos"
-            className="text-text-secondary transition-colors hover:text-text-primary"
+      <div className="border-b border-border py-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-6 sm:px-10 lg:px-20">
+          <button
+            type="button"
+            onClick={voltar}
+            className="inline-flex h-10 items-center gap-2 rounded-lg hover:bg-surface-raised/30 px-4 text-sm text-text-secondary transition-colors hover:border-text-secondary hover:text-text-primary"
           >
-            Projetos integradores
-          </Link>
-          <span className="text-border" aria-hidden="true">
-            &gt;
-          </span>
-          <span className="text-primary-text" aria-current="page">
-            Detalhes do P.I
-          </span>
+            <IconeVoltar className="h-4 w-4" />
+            Voltar
+          </button>
+          <div className="flex flex-wrap justify-end gap-3 text-base">
+            <Link
+              to="/explorarprojetos"
+              className="text-text-secondary transition-colors hover:text-text-primary"
+            >
+              Projetos integradores
+            </Link>
+            <span className="text-border" aria-hidden="true">
+              &gt;
+            </span>
+            <span className="text-primary-text" aria-current="page">
+              Detalhes do P.I
+            </span>
+          </div>
         </div>
       </div>
 
       <section
-        className="relative aspect-video max-h-[779px] w-full overflow-hidden bg-surface-raised"
+        className="relative aspect-video max-h-194.75 w-full overflow-hidden bg-surface-raised"
         aria-label="Capa do projeto"
       >
         <div className="absolute inset-x-0 top-0 z-10 flex px-6 pt-6 sm:px-10 lg:px-20">
@@ -156,12 +174,11 @@ function Detalhes() {
             {projeto.status}
           </span>
         </div>
-        <div className="flex h-full w-full flex-col items-center justify-center gap-2 px-6 pt-10 text-center text-[#a4aab6] sm:gap-4 sm:pt-0">
-          <IconeImagem className="h-8 w-8 sm:h-12 sm:w-12" />
-          <p className="text-base font-bold sm:text-xl md:text-2xl">
-            Imagem de capa do projeto
-          </p>
-        </div>
+        <img
+          src={projeto.imagem}
+          alt={`Capa do projeto ${projeto.titulo}`}
+          className="h-full w-full object-cover"
+        />
       </section>
 
       <div className="px-6 py-5 sm:px-10 lg:px-20">
@@ -235,7 +252,7 @@ function Detalhes() {
         >
           Linha do tempo do projeto
         </p>
-        <div className="relative mx-auto max-w-[960px] py-2">
+        <div className="relative mx-auto max-w-240 py-2">
           <span
             className="absolute top-0 bottom-0 left-2 w-px bg-border lg:left-1/2"
             aria-hidden="true"

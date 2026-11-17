@@ -1,3 +1,5 @@
+import { imagemDoProjeto } from "./imagensProjetos";
+
 /**
  * Universo de dados único do P.I Hub (MVP com dados mockados).
  *
@@ -518,6 +520,7 @@ export function detalhesDoProjeto(id) {
     tags: area.tags,
     descricao: `${projeto.titulo} é um projeto integrador do ${turma.semestre}º semestre, desenvolvido pelo ${projeto.grupo} com foco em ${area.tema}. A proposta reúne pesquisa, prototipação e implementação de uma solução para um problema real do campus.`,
     repositorio: `https://github.com/pihub-fatec/${projeto.id}`,
+    imagem: imagemDoProjeto(projeto),
     integrantesNomes: membros,
     linhaDoTempo: LINHA_DO_TEMPO_PADRAO,
   };

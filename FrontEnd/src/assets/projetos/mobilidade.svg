@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none" role="img" aria-label="Ilustração de mobilidade e transporte">
+  <defs>
+    <linearGradient id="mob-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171A21"/>
+      <stop offset="1" stop-color="#10131A"/>
+    </linearGradient>
+    <pattern id="mob-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#2B303B" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#mob-bg)"/>
+  <rect width="1200" height="675" fill="url(#mob-grid)" opacity=".45"/>
+  <circle cx="600" cy="330" r="330" fill="#4C8DFF" opacity=".05"/>
+  <path d="M90 548C250 548 300 470 420 470C540 470 620 520 720 500C840 476 900 400 1110 400" stroke="#2B303B" stroke-width="6" stroke-linecap="round" stroke-dasharray="18 20"/>
+  <rect x="420" y="236" width="360" height="230" rx="26" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <rect x="444" y="262" width="96" height="74" rx="12" fill="#171A21" stroke="#34B3A0" stroke-width="2"/>
+  <rect x="552" y="262" width="96" height="74" rx="12" fill="#171A21" stroke="#34B3A0" stroke-width="2"/>
+  <rect x="660" y="262" width="96" height="74" rx="12" fill="#171A21" stroke="#34B3A0" stroke-width="2"/>
+  <path d="M444 372h312" stroke="#2B303B" stroke-width="2"/>
+  <rect x="444" y="390" width="60" height="16" rx="8" fill="#34B3A0" opacity=".7"/>
+  <rect x="520" y="390" width="60" height="16" rx="8" fill="#4C8DFF" opacity=".6"/>
+  <circle cx="480" cy="474" r="28" fill="#0F1115" stroke="#34B3A0" stroke-width="6"/>
+  <circle cx="720" cy="474" r="28" fill="#0F1115" stroke="#34B3A0" stroke-width="6"/>
+  <path d="M840 178c0 30-34 66-34 66s-34-36-34-66a34 34 0 1 1 68 0Z" fill="#20242D" stroke="#B51F32" stroke-width="3"/>
+  <circle cx="806" cy="176" r="12" fill="#B51F32"/>
+  <path d="M292 158c0 26-30 58-30 58s-30-32-30-58a30 30 0 1 1 60 0Z" fill="#20242D" stroke="#4C8DFF" stroke-width="3"/>
+  <circle cx="262" cy="156" r="10" fill="#4C8DFF"/>
+  <rect x="150" y="470" width="70" height="70" rx="6" fill="#20242D"/>
+  <rect x="236" y="500" width="54" height="40" rx="6" fill="#20242D"/>
+  <rect x="980" y="440" width="80" height="100" rx="6" fill="#20242D"/>
+  <rect x="1076" y="484" width="54" height="56" rx="6" fill="#20242D"/>
+</svg>

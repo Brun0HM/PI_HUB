@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none" role="img" aria-label="Ilustração de educação e indicadores">
+  <defs>
+    <linearGradient id="edu-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171A21"/>
+      <stop offset="1" stop-color="#10131A"/>
+    </linearGradient>
+    <pattern id="edu-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#2B303B" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#edu-bg)"/>
+  <rect width="1200" height="675" fill="url(#edu-grid)" opacity=".45"/>
+  <circle cx="600" cy="320" r="330" fill="#4C8DFF" opacity=".05"/>
+  <path d="M600 158l190 78-190 78-190-78 190-78Z" fill="#34B3A0" opacity=".9"/>
+  <path d="M470 268v74c0 34 58 62 130 62s130-28 130-62v-74l-130 54-130-54Z" fill="#34B3A0" opacity=".35"/>
+  <path d="M790 236v96" stroke="#34B3A0" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="790" cy="342" r="12" fill="#34B3A0"/>
+  <rect x="380" y="440" width="70" height="26" rx="6" fill="#4C8DFF" opacity=".8"/>
+  <rect x="380" y="410" width="70" height="18" rx="6" fill="#4C8DFF" opacity=".55"/>
+  <rect x="380" y="472" width="70" height="12" rx="6" fill="#4C8DFF" opacity=".35"/>
+  <path d="M470 508V452" stroke="#B51F32" stroke-width="16" stroke-linecap="round"/>
+  <path d="M520 508V430" stroke="#34B3A0" stroke-width="16" stroke-linecap="round"/>
+  <path d="M570 508V470" stroke="#4C8DFF" stroke-width="16" stroke-linecap="round"/>
+  <rect x="500" y="510" width="200" height="4" rx="2" fill="#2B303B"/>
+  <path d="M690 494c26-24 52-24 78 0v-64c-26-22-52-22-78 0v64Z" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M846 494c-26-24-52-24-78 0v-64c26-22 52-22 78 0v64Z" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M690 430v64M846 430v64" stroke="#2B303B" stroke-width="2"/>
+  <circle cx="250" cy="250" r="40" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M250 230l6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2 6-13Z" fill="#E3A92B" opacity=".9"/>
+</svg>

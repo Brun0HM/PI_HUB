@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none" role="img" aria-label="Ilustração de eventos e reservas">
+  <defs>
+    <linearGradient id="eve-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#171A21"/>
+      <stop offset="1" stop-color="#10131A"/>
+    </linearGradient>
+    <pattern id="eve-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#2B303B" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#eve-bg)"/>
+  <rect width="1200" height="675" fill="url(#eve-grid)" opacity=".45"/>
+  <circle cx="600" cy="330" r="330" fill="#34B3A0" opacity=".05"/>
+  <rect x="330" y="176" width="320" height="310" rx="18" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M330 244h320" stroke="#2B303B" stroke-width="2"/>
+  <rect x="368" y="200" width="70" height="16" rx="8" fill="#34B3A0" opacity=".7"/>
+  <rect x="546" y="200" width="70" height="16" rx="8" fill="#4C8DFF" opacity=".6"/>
+  <g fill="#9AA1AE" opacity=".35">
+    <rect x="368" y="274" width="34" height="26" rx="6"/>
+    <rect x="420" y="274" width="34" height="26" rx="6"/>
+    <rect x="472" y="274" width="34" height="26" rx="6"/>
+    <rect x="524" y="274" width="34" height="26" rx="6"/>
+    <rect x="576" y="274" width="34" height="26" rx="6"/>
+    <rect x="368" y="320" width="34" height="26" rx="6"/>
+    <rect x="472" y="320" width="34" height="26" rx="6"/>
+    <rect x="576" y="320" width="34" height="26" rx="6"/>
+    <rect x="420" y="366" width="34" height="26" rx="6"/>
+    <rect x="524" y="366" width="34" height="26" rx="6"/>
+  </g>
+  <rect x="420" y="320" width="34" height="26" rx="6" fill="#34B3A0"/>
+  <rect x="524" y="320" width="34" height="26" rx="6" fill="#34B3A0" opacity=".8"/>
+  <rect x="368" y="366" width="34" height="26" rx="6" fill="#4C8DFF"/>
+  <rect x="576" y="366" width="34" height="26" rx="6" fill="#B51F32" opacity=".8"/>
+  <path d="M760 300h180a14 14 0 0 1 14 14v86a14 14 0 0 1-14 14H760a14 14 0 0 1-14-14v-86a14 14 0 0 1 14-14Z" fill="#20242D" stroke="#34B3A0" stroke-width="3"/>
+  <path d="M790 300v114M924 300v114" stroke="#2B303B" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="820" y="344" width="94" height="12" rx="6" fill="#9AA1AE" opacity=".45"/>
+  <rect x="834" y="370" width="66" height="10" rx="5" fill="#9AA1AE" opacity=".25"/>
+  <circle cx="870" cy="222" r="52" fill="#20242D" stroke="#2B303B" stroke-width="2"/>
+  <path d="M870 192v32l22 14" stroke="#4C8DFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="330" y="536" width="52" height="22" rx="8" fill="#2B303B"/>
+  <rect x="398" y="536" width="52" height="22" rx="8" fill="#2B303B"/>
+  <rect x="466" y="536" width="52" height="22" rx="8" fill="#2B303B"/>
+  <rect x="534" y="536" width="52" height="22" rx="8" fill="#2B303B"/>
+  <rect x="602" y="536" width="52" height="22" rx="8" fill="#2B303B"/>
+</svg>

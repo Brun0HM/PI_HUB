@@ -11,6 +11,24 @@ const inputClasses =
 
 const formInicial = { email: "", ra: "", senha: "" };
 
+function IconeVoltar({ className }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M19 12H5" />
+      <path d="m11 18-6-6 6-6" />
+    </svg>
+  );
+}
+
 function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState(formInicial);
@@ -69,6 +87,14 @@ function Login() {
     }));
   };
 
+  function voltar() {
+    if (window.history.state?.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-bg text-text-primary lg:grid lg:grid-cols-[44%_56%]">
       <section
@@ -100,11 +126,20 @@ function Login() {
       </section>
 
       <section className="flex items-center px-12 py-12 lg:order-1 lg:justify-center lg:px-16 lg:py-0">
-        <form
-          className="flex w-full max-w-sm flex-col gap-6"
-          noValidate
-          onSubmit={handleSubmit}
-        >
+        <div className="w-full max-w-sm">
+          <button
+            type="button"
+            onClick={voltar}
+            className="mb-6 inline-flex h-10 items-center gap-2 rounded-lg px-4 text-sm text-text-secondary transition-colors hover:border-text-secondary hover:bg-surface-raised/30 hover:text-text-primary"
+          >
+            <IconeVoltar className="h-4 w-4" />
+            Voltar
+          </button>
+          <form
+            className="flex w-full flex-col gap-6"
+            noValidate
+            onSubmit={handleSubmit}
+          >
           <div>
             <h2 className="text-3xl font-medium lg:text-5xl">Login</h2>
             <p className="mt-2 text-xs text-text-secondary">
@@ -195,7 +230,8 @@ function Login() {
             text="Login"
             className="h-12 w-full px-5"
           />
-        </form>
+          </form>
+        </div>
       </section>
     </main>
   );

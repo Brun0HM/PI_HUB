@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import BotaoAvancar from "../../components/Buttons/BotaoAvancar";
+import ModalCriarProjeto from "../../components/Dashboard/ModalCriarProjeto";
 import StatusBar from "../../components/Dashboard/StatusBar";
 import TurmaCard from "../../components/Dashboard/TurmaCard";
 import {
@@ -37,6 +38,7 @@ function SearchIcon({ className }) {
 function DashBoard() {
   const turmasRef = useRef(null);
   const carrossel = useSetasDeRolagem(turmasRef, "[data-turma]");
+  const [modalProjetoAberto, setModalProjetoAberto] = useState(false);
 
   return (
     <div className="flex flex-col items-center px-4 py-10 sm:px-6 lg:px-20">
@@ -79,6 +81,7 @@ function DashBoard() {
 
             <button
               type="button"
+              onClick={() => setModalProjetoAberto(true)}
               className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-surface px-4 py-5 text-sm text-text-primary transition-colors hover:bg-surface-raised"
             >
               <svg
@@ -209,6 +212,11 @@ function DashBoard() {
           )}
         </section>
       </div>
+
+      <ModalCriarProjeto
+        aberto={modalProjetoAberto}
+        onClose={() => setModalProjetoAberto(false)}
+      />
     </div>
   );
 }

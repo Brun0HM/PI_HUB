@@ -8,3 +8,7 @@ Fatec Jahu · Curso de Desenvolvimento de Software Multiplataforma · Equipe04
 ## Documentação técnica
 
 - [DOCUMENTACAO-TECNICA.md](./DOCUMENTACAO-TECNICA.md) — arquitetura, estrutura de pastas, decisões técnicas, fluxos, autenticação simulada e próximos passos.
+
+## Requisitos funcionais
+
+- [REQUISITOS-FUNCIONAIS.md](./REQUISITOS-FUNCIONAIS.md) — os 34 requisitos funcionais do sistema, organizados por grupo, com fase, perfis, atributos e critérios de aceitação.

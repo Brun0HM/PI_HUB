@@ -12,3 +12,7 @@ Fatec Jahu · Curso de Desenvolvimento de Software Multiplataforma · Equipe04
 ## Requisitos funcionais
 
 - [REQUISITOS-FUNCIONAIS.md](./REQUISITOS-FUNCIONAIS.md) — os 34 requisitos funcionais do sistema, organizados por grupo, com fase, perfis, atributos e critérios de aceitação.
+
+## Design
+
+- [Design/README.md](./Design/README.md) — identidade visual, paleta, tipografia, botões, telas e modelo de navegação.
